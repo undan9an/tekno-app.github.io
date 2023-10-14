@@ -2,7 +2,7 @@
   "harga" : [[25000,"1 Bln (30 Hari)",0],[50000,"3 Bln (90 Hari)",25000],[100000,"6 Bln (180 Hari)",50000],[150000,"9 Bln (270 Hari)",75000],[200000,"12 Bln (360 Hari)",100000]],
   "transfer" : [["DANA","088230422370","Ichsan Abdalla"],["GOPAY","088230422370","Ichsan Abdalla"]],
   "nomoradmin" : "6288230422370",
-  "info" : "<h6 class=\"mt-2 fw-bold text-muted text-center\">Powered By</h6><div class=\"pb-2 text-center\" style=\"height:35vmin\"><img src=\"\" id=\"guambar\" style=\"transition:1s;height:100%\" class=\"scale0\"></div> <img class=\"d-none\"  src=\"../0/hob.png\" onload=\"if(kecamatan != 'Pangalengan'){}else{document.getElementById('guambar').src=this.src,document.getElementById('guambar').classList.remove('scale0')}\">",
+  "info" : "<h6 class=\"mt-2 fw-bold text-muted text-center\">Powered By</h6><div class=\"pb-2 text-center\" style=\"height:35vmin\"><img src=\"\" id=\"guambar\" style=\"transition:1s;height:100%\" class=\"scale0\"></div> <img class=\"d-none\"  src=\"https://drive.google.com/uc?export=download&id=1PqlT3_aquVLa_RlfJoyriM3_U6HN7TgC\" onload=\"if(kecamatan == 'Pangalengan'){document.getElementById('guambar').src=this.src,document.getElementById('guambar').classList.remove('scale0')}\">",
   "folderID" : "1-0tvGQb7TW_efWTMdDtRu2ZnRyU_oFoW",
   "urlDB" : 
       [
