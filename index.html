@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="../0/bootstrap5.2.3.min.css"
+      crossorigin="anonymous"
+    />
+
+    <title id="title"></title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="../0/icon.png" id="icon" />
+    <link rel="apple-touch-icon" href="../0/icon.png" />
+    <meta name="theme-color" content="#040720" />
+    <style>
+      .navbar-nav input {
+        display: none;
+      }
+      .navbar-nav input:first-child:checked ~ label:nth-child(2),
+      .navbar-nav input:nth-child(3):checked ~ label:nth-child(4),
+      .navbar-nav input:nth-child(5):checked ~ label:nth-child(6) {
+        color: white;
+      }
+
+      .jenis .form-check span {
+        display: none;
+      }
+
+      #barang:checked ~ span,
+      #jasa:checked ~ span {
+        display: inline-flex;
+      }
+
+      body > div.a,
+      .utama > div.a,.profil > .a, .centangPage .a{
+        display: none;
+      }
+
+      * {
+        font-family: Arial;
+      }
+      .loader {
+        position: relative;
+        top: 45vh;
+        width: 100vw;
+        display: inline-block;
+      }
+      .scale0{
+        transform: scale(0);
+      }
+      .lihat-data.a{
+        transition-timing-function: ease-out;
+      }
+      .lihat-data.b{
+        transition-timing-function: ease-in;
+      }
+    </style>
+  </head>
+  <body id="kecamatan" class="Pangalengan">
+    <span class="loader text-center">
+      <div class="spinner-grow text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow text-warning" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </span>
+    <div class="py-2 instal a" style="min-height: 100vh;background-color:#040720">
+      <div class="card mx-2">
+        <div class="card-body">
+          <div class="d-flex justify-content-around align-items-center">
+            <img src="../0/icon.png" style="width: 25vmin" />
+            <div class="d-flex flex-column align-items-center">
+              <h4 id="title2"></h4>
+            
+              <button
+                class="btn btn-primary btn-loading disabled"
+                id="instalbtn"
+              >
+                Loading
+                <span
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+              </button>
+            </div>
+          </div>
+          <hr />
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed text-muted py-2"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  <b>Deskripsi #</b>
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body mx-1 px-0 mb-0 pb-0">
+                  <p class="lh-sm">
+                    Pengen jajan tapi lagi mager? Atau badan pegal2 tapi bingung
+                    nyari tukang pijat gak punya kontaknya?<br />Cari di
+                    aplikasi ini... Instal Sekarang!<br /><br />Nyari kerja
+                    susah, mau usaha tapi gak punya tempat, gak punya gerobak,
+                    dll?<br /><br />Usaha kecil-kecilan di rumah bisa kok.<br />Jualan
+                    seblak, nasi goreng, martabak, dll.<br />Daftarkan di
+                    aplikasi ini 😊<br /><br />Biarkan pelanggan menghubungi
+                    anda, memesan & membeli produk anda. Bisa dilakukan dengan
+                    cara <b>Delivery Order</b> (pesan antar) atau <b>COD</b> di
+                    area sekitar rumah penjual.<br /><br />Bukan hanya makanan
+                    atau barang, anda juga bisa menawarkan jasa / keahlian
+                    seperti, jasa pijat panggilan, mekanik panggilan, jastip,
+                    laundry, jasa ojek, dan lainnya.<br /><br />Selamat mencoba,
+                    semoga sukses dan berkah 😊
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mx-2 mt-2 py-3">
+        <div
+          id="carouselExampleCaptions"
+          class="carousel slide"
+          data-bs-ride="false"
+        >
+          <div class="carousel-indicators d-none">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="../0/ss1.png"
+                class="d-block m-auto border"
+                alt="..."
+                style="height: 70vh"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../0/ss2.png"
+                class="d-block m-auto border"
+                alt="..."
+                style="height: 70vh"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../0/ss3.png"
+                class="d-block m-auto border"
+                alt="..."
+                style="height: 70vh"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev carousel-dark"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next carousel-dark"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="utama a">
+      <nav
+        class="navbar navbar-expand-lg shadow navbar-dark fixed-top"
+        style="z-index: 3;background-color:#040720"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold" href="#" id="title3"></a>
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target=""
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto text-end 0">
+              <input
+                type="radio"
+                name="page"
+                id="Beranda"
+                value="0"
+                checked
+              /><label class="nav-link" for="Beranda">Beranda</label>
+              <input type="radio" name="page" id="Daftar" value="1" /><label
+                class="nav-link daftarprofil"
+                for="Daftar"
+                >Daftar</label
+              >
+              <input type="radio" name="page" id="Tentang" value="2" /><label
+                class="nav-link disabled"
+                for="Tentang"
+                >Tentang</label
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        class="beranda px-0 pt-2 pb-5 position-absolute bottom-0 top-0 w-100 overflow-auto"
+      >
+        <div
+          class="bg-light py-4 px-5 mt-5 d-flex shadow-sm"
+          style="z-index: 1"
+        >
+          <span class="input-group d-flex position-relative w-100">
+            <ul class="dropdown-menu saran position-absolute top-100"></ul>
+
+           <input
+              class="form-control rounded-0 rounded-start searchInput"
+              type="search"
+              placeholder="seblak, tukang pijat, jastip..."
+              aria-label="Search"
+              autocomplete="on"
+              style="z-index:0"
+              required
+            />
+
+            <button
+              class="btn btn-success rounded-0 rounded-end searchBtn"
+              type="button" style="z-index:0"
+            >
+              Cari
+            </button>
+          </span>
+        </div>
+
+        <div
+          class="row mb-4 pt-1 w-100 mx-auto overflow-x-hidden hasilcari"
+        ></div>
+
+        <div
+          class="card fixed-top start-100 mt-5 shadow lihat-data a"
+          style="
+            z-index: 2;
+            transition: 1s;
+            right: -100%;
+            bottom: 0;
+          "
+        >
+          <div class="card-body mt-2 overflow-auto">
+            <div class="img position-relative">
+              <div
+                class="d-flex justify-content-center align-items-center overflow-hidden rounded-top w-100"
+                class="d-flex justify-content-center align-items-center overflow-hidden rounded-top w-100"
+                style="height: 60vmin"
+              >
+                <img
+                  class="card-img-top gambar"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal1"
+                  style="min-width:100%;min-height:100%"
+                />
+              </div>
+              <div
+                style="
+                  width: 26vmin;
+                  height: 26vmin;
+                  position: absolute;
+                  bottom: -13vmin;
+                  left: 0;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+                class="border border-3 border-warning rounded-2 shadow-sm overflow-hidden"
+              >
+                <img
+                  src=""
+                  alt="..."
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal1"
+                  class="foto"
+                  style="min-width:100%;min-height:100%"
+                />
+              </div>
+              <span
+                class="position-absolute d-flex justify-content-between align-items-center"
+                style="right: 0; bottom: -12vmin"
+              >
+                <img
+                  src="../0/3titik.png"
+                  class="titik dropdown-toggle mx-1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="height: 1.5em"
+                />
+                <ul class="dropdown-menu">
+                  <li
+                    class="dropdown-item lapor"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Laporkan akun ini?
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-success p-1 shadow fw-bold d-flex justify-content-evenly align-items-center hubungi"
+                  style="font-size: 1em"
+                >
+                  HUBUNGI<img
+                    src="../0/wa.png"
+                    class="waIcon"
+                    style="height: 1.8em"
+                  />
+                </button>
+              </span>
+            </div>
+            <h6
+              class="card-title lh-sm"
+              style="margin-top: 14vmin; font-size: 1.07em"
+            ><span class="lihatjudul"></span><img class="d-none imgcentang" src="../0/centang.png" style="height:1em;"></h6>
+            <h6
+              class="card-subtitle mb-2 text-muted lihatnama"
+              style="font-size: 0.9em"
+            ></h6>
+            <hr />
+            <span class="lihatjam"></span><br />
+            <span class="lihatlokasi"></span><br />
+            <span class="lihatorder"></span>
+            <hr />
+            <p class="lihatdeskripsi lh-sm my-0"></p>
+          </div>
+          <hr class="my-0 mx-3" />
+
+          <div
+            style="transform: rotate(180deg); display: inline-block"
+            class="text-center fw-bold px-2"
+            onclick="history.back()"
+          >
+            ➡
+          </div>
+        </div>
+
+        <button
+          onclick="topFunction()"
+          class="rounded-circle bg-success fs-2"
+          id="myBtn"
+          title="Go to top"
+          style="
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 1;
+            border: none;
+            outline: none;
+            color: white;
+            cursor: pointer;
+            width: 13vmin;
+            height: 13vmin;
+            transform: rotate(270deg);
+          "
+        >
+          ➡
+        </button>
+      </div>
+
+      <div
+        class="profil mt-5 pt-2 pb-5 px-3 position-absolute bottom-0 top-0 w-100 overflow-auto a"
+      >
+         <div
+              class="alert alert-success alert-dismissible text-center fade show px-5 mt-4 simpanOK a"
+              role="alert"
+            >
+              <strong>Data berhasil disimpan!</strong><p class="mb-0">Memperbarui <span
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span></p>
+            </div>
+            
+                <span class="card px-5 py-3 mt-4 editCentang a">
+          <h6 class="text-success text-center fw-bold mb-3">Anda sudah terdaftar</h6>
+
+          <button class="btn btn-warning editbtn">Edit data</button>
+          <span class="text-muted my-2 text-center">atau</span>
+          
+          <button class="btn btn-primary centangbtn">Aktivasi centang biru</button>
+        </span>
+        
+        <span class="card px-5 py-3 mt-4 daftarlogin">
+          <h6 class="text-dark text-center fw-bold text-decoration-underline mb-3">Masuk / Log in</h6>
+          <form name="loginForm">
+          <label for="walogin" class="form-label">Nomor Whatsapp :</label>
+          <input type="text" class="form-control mb-3" id="walogin" onkeypress="return onlyNumberKey(event"
+                  minLength="13"
+                  maxlength="17"
+                  placeholder="08123456xxx"
+                  required>
+          <label for="pwlogin" class="form-label">Kata sandi :</label>
+          <input type="password" class="form-control mb-3" minLength="8"
+                  maxlength="16"
+                  placeholder="********" required id="pwlogin">
+          <button class="btn btn-primary w-100 loginbtn">Masuk</button>
+          </form>
+          <span class="text-muted my-2 text-center">atau</span>
+          
+          <button class="btn btn-warning daftarbtn">Daftar Baru</button>
+        </span>
+        
+        <div class="mt-4 card" id="iklan"></div>
+        
+        <div class="row mx-auto centangPage a">
+          <div class="border lh-sm mt-3 pt-2 rounded">
+            <span class="d-flex justify-content-center"><h5><span class="border-bottom border-2">Centang Biru</span> <img class="" src="../0/centang.png" style="height:1.2em;"></h5></span>
+            Mendapatkan centang biru bukan hanya sekadar simbol status atau prestise. Ada beberapa manfaat nyata yang dapat dirasakan oleh pemilik akun centang biru, antara lain:
+            <ul class="fst-italic">
+            <li>Meningkatkan kredibilitas dan kepercayaan dari pelanggan dan calon pelanggan. Akun centang biru dapat membuat pelanggan merasa lebih yakin dan lebih berpeluang dipilih oleh pelanggan ketimbang akun biasa yang menawarkan barang/jasa serupa.</li>
+            <li>Meningkatkan visibilitas dan jangkauan akun. Akun centang biru memiliki prioritas lebih tinggi dalam hasil pencarian dan rekomendasi. Akun centang biru akan tampil di jajaran atas pada hasil pencarian.</li>
+            </ul>
+            <p>Centang biru adalah tanda verifikasi resmi yang menunjukkan bahwa suatu akun adalah asli dan bukan palsu. Untuk mendapatkan verifikasi centang biru, anda bisa memilih paket aktivasi dan menyertakan foto/screenshot bukti pembayaran.</p>
+          </div>
+          
+          <div
+              class="alert alert-danger alert-dismissible fade show text-center my-3 py-1 px-5"
+              role="alert" id="statusCentang"
+            >
+              <strong>Centang biru belum aktif!</strong>
+            </div>
+          
+          <div class="border py-3 rounded a" id="callAdmin">
+            <span class="d-flex justify-content-center mb-2"><strong class="border-bottom">Permintaan aktivasi berhasil dikirim.</strong></strong></span>
+            <div>Silahkan hubungi admin agar aktivasi segera diproses.</div>
+            <button
+                  class="btn btn-success p-1 shadow fw-bold d-flex justify-content-evenly align-items-center mx-auto"
+                  style="font-size: 1em" id="callAdmin"
+                >
+                  HUBUNGI ADMIN<img
+                    src="../0/wa.png"
+                    class="waIcon"
+                    style="height: 1.8em"
+                  />
+                  </button>
+          </div>
+          
+          <div class="border pt-2 pb-3 lh-sm rounded" id="divAktivasi">
+            <span class="d-flex justify-content-center mb-2"><strong class="border-bottom" id="petunjukAktivasi">Petunjuk Aktivasi</strong></span>
+            
+              <li>Tentukan dan pilih paket aktivasi centang biru yang tersedia :</li>
+              <form name="aktivasi" class="mt-4" id="aktivasiForm">
+             <div class="position-relative">
+               <input type="text" autocomplete="off" class="opacity-0" id="pilihHarga" required>
+               <select class="form-select position-absolute start-0 bottom-0" id="harga">
+    
+  </select></div>
+  <div class="text-muted mt-1 infoHarga"></div>
+  
+  <li class="mt-3">Pilih tujuan transfer :</li>
+  <div class="position-relative mt-4">
+               <input type="text" autocomplete="off" class="opacity-0" id="pilihTransfer" required>
+               <select class="form-select position-absolute start-0 bottom-0" id="transferKe">
+    
+    
+    </select>
+    </div>
+    
+    <div class="mt-3 d-none" id="nextAktivasi">
+      <li>Silahkan lakukan transfer ke :</li>
+      <div class="border rounded d-flex flex-column justify-content-center align-items-center mt-2 mx-4 lh-lg">
+        <span>Nomor <i id="tujuanTransfer"></i> : <b id="nomorTujuan"></b></span>
+        <span>Atas Nama : <b id="namaTujuan"></b></span>
+        <span>Nominal : <b id="nominal"></b></span>
+      </div>
+      <li class="mt-3">Jika sudah mentransfer, masukkan bukti transaksi berupa foto/screenshot :</li>
+      <p class="text-end"><span class="btn position-relative" style="background-color:#eee"><span id="pilihSS">Pilih foto</span><input
+                  type="text"
+                  class="form-control position-absolute top-0 start-0 opacity-0"
+                  id="xSS"
+                  style="z-index:-1"
+                  autocomplete="off"
+                  required
+                /></span></p>
+                <div class="mt-3 mx-auto overflow-hidden d-flex justify-content-center align-items-center border position-relative" style="width:60vmin;height:45vmin"><p class="d-inline-block text-muted m-auto">Pratinjau</p><img class="position-absolute" src="" id="ssReview" style="max-width:100%;max-height:100%"/></div>
+                <img id="ssX" class="d-none"/>
+      
+      <div class="mt-3">
+        <p class="text-end mb-0">
+      <button class="btn btn-primary aktivasibtn">Aktifkan!</button>
+      <span
+                  class="d-none text-end text-primary aktivasiproses"
+                  type="button"
+                >
+                  Mengirim permintaan aktivasi <span
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                </span>
+      </p>
+      </div>
+    </div>
+  
+  </form>
+  
+  <input
+                  type="file"
+                  accept="image/*"
+                  class="d-none"
+                  id="ss"
+                />
+            </div>
+            
+            <span class="mt-3" onclick="history.back()"><span class="btn btn-secondary centangback"><div
+            style="transform: rotate(180deg); display: inline-block"
+            class="text-center fw-bold"
+            
+          >
+            ➡
+          </div> kembali</span></span>
+        </div>
+      
+        <div class="row mx-auto daftaredit a">
+          <div class="px-0">
+                    <span class="d-flex justify-content-center"><h5
+          class="mx-auto d-inline-block mt-3 text-success fw-bold border-bottom border-success formjudul"
+        >Formulir Pendaftaran</h5></span>
+           
+            <form class="mt-2" name="daftar">
+              <div class="mb-3">
+                <label for="judul" class="form-label"
+                  >Judul / Nama Usaha :</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="judul"
+                  name="judul"
+                  maxlength="30"
+                  placeholder="Seblak Super, Pijat Panggilan"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="nama" class="form-label">Nama Pelaku Usaha :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nama"
+                  name="nama"
+                  maxlength="30"
+                  placeholder="Asep (Penjual), Ujang (Mekanik)"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="jam" class="form-label">Jam Operasional :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="jam"
+                  name="jam"
+                  maxlength="30"
+                  placeholder="Senin - Jum'at, 08.00 - 17.00 WIB"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="lokasi" class="form-label"
+                  >Lokasi / Domisili :<br
+                /></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lokasi"
+                  name="lokasi"
+                  maxlength="30"
+                  placeholder="Jl. Abc, Desa Xyz"
+                  required
+                />
+              </div>
+              <div class="mb-3 jenis">
+                <label class="form-label">Jenis Usaha :</label><br />
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    id="barang"
+                    name="jenis"
+                    value="antar"
+                    class="form-check-input"
+                    required
+                  />
+                  <label for="barang" class="form-check-label">Barang</label>
+                  <span>
+                    <label class="form-check-label" for="antar">
+                      ➡ Pesan antar / delivery order?</label
+                    >
+                    <input
+                      class="form-check-input mx-2 antar"
+                      type="checkbox"
+                      value="1"
+                      id="antar"
+                  /></span>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    id="jasa"
+                    name="jenis"
+                    value="panggil"
+                    class="form-check-input"
+                    required
+                  />
+                  <label for="jasa" class="form-check-label">Jasa</label>
+                  <span>
+                    <label class="form-check-label" for="panggil">
+                      ➡ Bisa dipanggil ke tempat pelanggan?</label
+                    >
+                    <input
+                      class="form-check-input mx-2 panggil"
+                      type="checkbox"
+                      value="1"
+                      id="panggil"
+                  /></span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="deskripsi" class="form-label">Deskripsi :</label>
+                <textarea
+                  class="form-control"
+                  id="deskripsi"
+                  rows="5"
+                  name="deskripsi"
+                  placeholder="Jelaskan tentang barang atau jasa yang anda tawarkan"
+                  maxlength="500"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="kunci" class="form-label">Kunci pencarian :</label>
+                <textarea
+                  class="form-control"
+                  id="kunci"
+                  rows="4"
+                  name="kunci"
+                  placeholder='Tentukan kata kunci pencarian yang sesuai dengan usaha anda. Contoh kata kunci untuk usaha rias pengantin, "make up wedding organizer rias wajah", dll.'
+                  maxlength="200"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="gambar" class="form-label"
+                  >Foto produk/aktivitas menjalankan usaha yang ditawarkan
+                  :</label
+                >
+                
+                <p class="text-end"><span class="btn mx-2 resetGambar" style="background-color:#eee;display:none">Reset</span><span class="btn position-relative" style="background-color:#eee"><span id="pilihGambar">Pilih foto</span><input
+                  type="text"
+                  class="form-control position-absolute top-0 start-0 opacity-0"
+                  id="xGambar"
+                  style="z-index:-1"
+                  autocomplete="off"
+                  required
+                /></span></p>
+                <div class="w-100 mt-3 overflow-hidden d-flex align-items-center border position-relative" style="height:60vmin"><p class="d-inline-block text-muted m-auto">Pratinjau</p><img class="position-absolute w-100" src="" id="gambarReview" style="min-width:100%;min-height:100%"/></div>
+                <img id="gambarX" class="d-none"/>
+              </div>
+              <div class="mb-3">
+                <label for="foto" class="form-label"
+                  >Foto profil :</label
+                >
+                <p class="text-end"><span class="btn mx-2 resetFoto" style="background-color:#eee;display:none">Reset</span><span class="btn position-relative" style="background-color:#eee"><span id="pilihFoto">Pilih foto</span><input
+                  type="text"
+                  class="form-control position-absolute top-0 start-0 opacity-0"
+                  id="xFoto"
+                  style="z-index:-1"
+                  autocomplete="off"
+                  required
+                /></span></p>
+                <div class="border mt-3 mx-auto overflow-hidden d-flex justify-content-center align-items-center position-relative" style="width:40vmin;height:40vmin"><p class="d-inline-block text-muted m-auto">Pratinjau</p><img class="position-absolute" id="fotoReview" src=""/></div>
+                <img id="fotoX" class="d-none"/>
+              </div>
+              <div class="mb-3">
+                <label for="noWA" class="form-label"
+                  >Nomor Whatsapp untuk dihubungi oleh pelanggan :<br
+                /></label>
+                <input
+                  type="text"
+                  onkeypress="return onlyNumberKey(event)"
+                  class="form-control"
+                  id="noWA"
+                  name="noWA"
+                  minLength="13"
+                  maxlength="17"
+                  placeholder="08123456xxx"
+                  required
+                />
+              </div>
+              <div id="pwx">
+                
+              
+              <div class="mb-3">
+                <label for="pw" class="form-label"
+                  >Buat kata sandi baru :</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="pw"
+                  name="pw"
+                  minLength="8"
+                  maxlength="16"
+                  placeholder="********"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="pw2" class="form-label"
+                  >Konfirmasi kata sandi :<br
+                /></label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="pw2"
+                  name="pw2"
+                  minLength="8"
+                  maxlength="16"
+                  placeholder="********"
+                  required
+                />
+              </div>
+              </div>
+
+              <div class="d-flex w-100 justify-content-between">
+                <span class="kembali"><span class="btn btn-secondary daftarback"><div
+            style="transform: rotate(180deg); display: inline-block"
+            class="text-center fw-bold"
+            
+          >
+            ➡
+          </div> kembali</span></span>
+                <span>
+                <button type="submit" class="btn btn-primary btn-kirim">
+                  Simpan
+                </button>
+                <button
+                  class="btn btn-primary btn-loading d-none disabled"
+                  type="button"
+                  id="kirim"
+                >
+                  Menyimpan
+                  <span
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+                </span>
+              </div>
+            </form>
+            <input
+                  type="file"
+                  accept="image/*"
+                  class="d-none"
+                  id="gambar"
+                />
+            <input
+                  type="file"
+                  accept="image/*"
+                  class="d-none"
+                  id="foto"
+                />
+            
+          </div>
+        </div>
+      
+
+      <div
+        class="tentang mt-5 px-0 pt-2 pb-5 position-absolute bottom-0 top-0 w-100 overflow-auto a"
+      >
+        tentang
+      </div>
+
+      <button
+        type="hidden"
+        class="d-none"
+        id="eror"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal2"
+      ></button>
+      </div>
+    </div>
+
+    <span
+      class="d-none fixed-top bottom-0 w-100"
+      style="background-color: rgba(0, 0, 0, 0.8); z-index: 3"
+    >
+      <img src="" alt="" class="m-auto" style="width: 95%" />
+    </span>
+    <!-- Modal -->
+    <div
+      class="modal fade bg-white"
+      id="splash"
+      data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+      <div class="modal-dialog modal-dialog-centered">
+        <img src="../0/icon.png" class="mb-5 mx-auto" alt="" style="width: 33vmin" />
+      </div>
+    </div>
+    <button
+      type="hidden"
+      class="d-none"
+      id="splashbtn"
+      data-bs-toggle="modal"
+      data-bs-target="#splash"
+    ></button>
+
+    <div
+      class="modal fade"
+      id="exampleModal2"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan!</h1>
+          </div>
+          <div class="modal-body pt-3 pb-0">
+            <div
+              class="alert alert-danger alert-dismissible fade show text-center px-0 alert-eror"
+              role="alert"
+            ></div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger tutup-alert">
+                oke
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade imgX"
+      id="exampleModal1"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <img src="" alt="" class="m-auto modal-content" />
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Laporkan Akun!
+            </h1>
+          </div>
+          <div class="modal-body py-1">
+            <form name="lapor">
+              <div class="laporForm">
+                <label for="lokasi" class="form-label"
+                  >Nomor Whatsapp anda (Pelapor) :</label
+                >
+                <input
+                  type="text"
+                  onkeypress="return onlyNumberKey(event)"
+                  class="form-control mb-2"
+                  id="pelapor"
+                  name="pelapor"
+                  minLength="13"
+                  maxlength="16"
+                  placeholder="08123456xxx"
+                  required
+                />
+                <label for="message-text" class="col-form-label pt-0"
+                  >Keluhan :</label
+                >
+                <textarea
+                  class="form-control"
+                  rows="3"
+                  maxlength="500"
+                  id="keluhan"
+                  name="keluhan"
+                  placeholder="Tulis laporan anda disini"
+                  required
+                ></textarea>
+                <input type="hidden" name="id" id="laporID" />
+                <input type="hidden" name="judul" id="laporJudul" />
+                <input type="hidden" name="kecamatan" value=""  id="laporKec"/>
+              </div>
+              <div
+                class="alert alert-dismissible fade d-none show text-center lapor-ok mt-4"
+                role="alert"
+              ></div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary batal"
+                  data-bs-dismiss="modal"
+                >
+                  Batal
+                </button>
+                <button type="submit" class="btn btn-primary kirim-lapor">
+                  Kirim
+                </button>
+                <button
+                  class="btn btn-primary btn-loading d-none"
+                  type="button"
+                  disabled=""
+                  id="kirimLapor"
+                >
+                  Mengirim
+                  <span
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../0/bootstrap5.2.3.bundle.min.js"></script>
+    <script src="../0/script.js" crossorigin="anonymous"></script>
+  </body>
+</html>

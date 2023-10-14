@@ -1,0 +1,23 @@
+{
+	"author": "Ichsan Abdalla",
+	"name": "Pangalengan App",
+	"short_name": "Pangalengan App",
+	"orientation": "portrait",
+	"start_url": "./",
+	"display": "standalone",
+	"background_color": "white",
+	"theme_color": "#040720",
+	"icons": [
+		{
+			"src": "../0/icon.png",
+			"sizes": "48x48 72x72 96x96 144x144 192x192 256x256 512x512",
+			"type": "image/png"
+		}
+	],
+	"manifest_version": 2,
+	"version": "0.1",
+	"related_applications": [{
+    "platform": "webapp",
+    "url": "manifest.json"
+  }]
+}
