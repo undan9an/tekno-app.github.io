@@ -1737,6 +1737,7 @@ let timeinstal = undefined;
 window.onload = () => {
   const registerServiceWorker = async () => {
     if ("serviceWorker" in navigator) {
+      
       try {
         const registration = await navigator.serviceWorker.register("sw.js?x="+new Date().getTime());
         if (registration.active) {
@@ -1768,7 +1769,7 @@ window.onload = () => {
           registerServiceWorker();
         }
       } catch (error) {
-        console.error(`Registration failed with ${error}`);
+        mulai();
       }
     } else {
       mulai();
