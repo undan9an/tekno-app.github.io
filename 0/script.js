@@ -1688,7 +1688,7 @@ formAktivasi.onsubmit = e=>{
     folderID : datax.folderID,
     images : [{
     base64 : dataSS.split("base64,")[1],
-    namafile : index + '.jpg'
+    namafile : all[index][1] + '.jpg'
   }],
     data : [kecamatan,index,all[index][0],tujuanTransfer.textContent+'/'+nominal.textContent,offDay]
   };
