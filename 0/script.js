@@ -1667,10 +1667,13 @@ formAktivasi.onsubmit = e=>{
   centangBack.classList.toggle('scale0');
   topBarToggler.dataset.bsTarget = '';
   
+  const h = parseInt(harga.value.split('/')[0]);
   let jmlHari = 30;
-  if(harga.value > datax.harga[0][0]){
-  jmlHari = (harga.value/datax.harga[0][0]+harga.value/datax.harga[0][1])*30;
+  
+  if(h > datax.harga[0][0]){
+  jmlHari = (h/datax.harga[0][0]+h/datax.harga[1][0])*30;
   }
+  
   let offDay;
   if(statusCentang.classList.contains('alert-success')){
     const tglX = all[index][12].split('#');
@@ -1690,7 +1693,7 @@ formAktivasi.onsubmit = e=>{
     base64 : dataSS.split("base64,")[1],
     namafile : all[index][1] + '.jpg'
   }],
-    data : [kecamatan,index,all[index][0],tujuanTransfer.textContent+'/'+nominal.textContent,offDay]
+    data : [kecamatan,index,all[index][0],tujuanTransfer.textContent+'/'+h.textContent,offDay]
   };
   
   fetch(urlDB, { method: "POST", body: JSON.stringify(obj) })
