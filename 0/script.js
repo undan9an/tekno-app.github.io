@@ -1693,7 +1693,7 @@ formAktivasi.onsubmit = e=>{
     base64 : dataSS.split("base64,")[1],
     namafile : all[index][1] + '.jpg'
   }],
-    data : [kecamatan,index,all[index][0],tujuanTransfer.textContent+'/'+h.textContent,offDay]
+    data : [kecamatan,index,all[index][0],tujuanTransfer.textContent+'/'+h,offDay]
   };
   
   fetch(urlDB, { method: "POST", body: JSON.stringify(obj) })
