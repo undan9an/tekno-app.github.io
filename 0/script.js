@@ -276,7 +276,7 @@ let data;
    }
   });
   } else {
-    data = all.filter((a) => a[5].includes(searchInput.value.toLowerCase()) || a[6].includes(searchInput.value.toLowerCase()) || a[8].includes(searchInput.value.toLowerCase()) || a[10].includes(searchInput.value.toLowerCase()) || a[11].includes(searchInput.value.toLowerCase()));
+    data = all.filter(a => a[5].toLowerCase().includes(searchInput.value.toLowerCase()) || a[6].toLowerCase().includes(searchInput.value.toLowerCase()) || a[8].toLowerCase().includes(searchInput.value.toLowerCase()) || a[10].toLowerCase().includes(searchInput.value.toLowerCase()) || a[11].toLowerCase().includes(searchInput.value.toLowerCase()));
   }
 
   setTimeout(() => {
