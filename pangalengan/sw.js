@@ -1,4 +1,4 @@
-const $versi = "v1.01";
+const $versi = "v1.1";
 const $caches = [
   '.','index.html','../0/wa.png','../0/3titik.png','../0/centang.png','../0/icon.png','../0/ss1.png','../0/ss2.png','../0/ss3.png','../0/script.js','../0/bootstrap5.2.3.min.css','../0/bootstrap5.2.3.bundle.min.js','../0/bootstrap.min.css.map','../0/bootstrap.bundle.min.js.map'
 ];
