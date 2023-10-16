@@ -1,7 +1,7 @@
 let urlDB;
 const indexUrl = 0;
 let sheetID;
-const sheetIndex = 1;
+const sheetIndex = 0;
 
 
 const kecamatan = document.getElementById('kecamatan').classList.value;
@@ -458,7 +458,17 @@ function lihatdata(data, text, centang) {
   document.querySelector(".lihatjam").textContent = "⏰ " + data[7];
   document.querySelector(".lihatlokasi").textContent = "🏡 " + data[8];
   document.querySelector(".lihatorder").textContent = "🛵 " + order;
-  document.querySelector(".lihatdeskripsi").textContent = data[10];
+  let des= '';
+  if(data[10].includes("\n")){
+    const barisBaru = data[10].split("\n");
+    
+    barisBaru.forEach((x,i)=>{
+      des += x+"\n";
+    });
+  }else{
+    des = data[10];
+  }
+  document.querySelector(".lihatdeskripsi").textContent = des;
   document.querySelector(".hubungi").onclick = () => {
     location.href = "https://api.whatsapp.com/send?phone=" + data[1];
   };
