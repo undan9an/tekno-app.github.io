@@ -463,11 +463,15 @@ function lihatdata(data, text, centang) {
     const barisBaru = data[10].split("\n");
     
     barisBaru.forEach((x,i)=>{
-      des += x+"\n";
+      des += x;
+      if(i < barisBaru.length-1){
+        des += "\n";
+      }
     });
   }else{
     des = data[10];
   }
+
   document.querySelector(".lihatdeskripsi").textContent = des;
   document.querySelector(".hubungi").onclick = () => {
     location.href = "https://api.whatsapp.com/send?phone=" + data[1];
